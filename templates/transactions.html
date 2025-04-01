@@ -37,7 +37,7 @@
                                 <td>{{ transaction.transaction_id[:8] }}...</td>
                                 <td>{{ products[transaction.product_id] }}</td>
                                 <td>{{ transaction.quantity }}</td>
-                                <td>{{ transaction.total_price }} Мемкоин</td>
+                                <td>{{ transaction.total_price }} STARCOIN</td>
                                 <td>{{ transaction.transaction_date.strftime('%Y-%m-%d %H:%M') }}</td>
                                 <td>
                                     {% if transaction.status == 'completed' %}

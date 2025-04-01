@@ -7,14 +7,14 @@
     <div class="col-md-8">
         <div class="card">
             <div class="card-header">
-                <h5 class="mb-0">Оплата банковской картой</h5>
+                <h5 class="mb-0">Оплата cosmo картой</h5>
             </div>
             <div class="card-body">
                 <form method="POST" action="{{ url_for('card_payment', transaction_id=transaction.transaction_id) }}" id="payment-form">
                     <div class="mb-3">
-                        <label for="card-number" class="form-label">Номер карты</label>
+                        <label for="card-number" class="form-label">ID карты</label>
                         <input type="text" class="form-control" id="card-number" name="card_number"
-                               placeholder="Введите номер карты (до 50 символов)" maxlength="50" required>
+                               placeholder="Введите ID карты (до 50 символов)" maxlength="50" required>
                         <div class="form-text"><!-- Можно вводить буквы, цифры и символы (максимум 50)--></div>
                     </div>
 
@@ -36,7 +36,7 @@
                     </div>
 
                     <div class="d-grid">
-                        <button type="submit" class="btn btn-primary btn-lg">Оплата {{ transaction.total_price }} Мемкоин</button>
+                        <button type="submit" class="btn btn-primary btn-lg">Оплата {{ transaction.total_price }} STARCOIN</button>
                     </div>
                 </form>
 
@@ -52,7 +52,7 @@
                     </div>
                     <div class="d-flex justify-content-between mb-2">
                         <span>Итого:</span>
-                        <span>{{ transaction.total_price }} Мемкоин</span>
+                        <span>{{ transaction.total_price }} STARCOIN</span>
                     </div>
                     <div class="d-flex justify-content-between mb-2">
                         <span>ID транзакции</span>

@@ -59,7 +59,7 @@ class Transaction(db.Model):
     transaction_id = db.Column(db.String(50), unique=True)
     status = db.Column(db.String(20), default='pending')
     payment_method = db.Column(db.String(20))  # 'card' или 'qr'
-    card_number = db.Column(db.String(50))     # Полный номер карты
+    card_number = db.Column(db.String(50))     # Полный ID карты
 
 
 # Маршруты
@@ -806,7 +806,7 @@ def card_payment(transaction_id):
     if request.method == 'POST':
         card_number = request.form.get('card_number', '').strip()
 
-        # Сохраняем полный номер карты (ТОЛЬКО ДЛЯ ТЕСТОВОГО ПРОЕКТА)
+        # Сохраняем полный ID карты (ТОЛЬКО ДЛЯ ТЕСТОВОГО ПРОЕКТА)
         transaction.payment_method = 'card'
         transaction.card_number = card_number  # Сохраняем полный номер
         transaction.status = 'completed'

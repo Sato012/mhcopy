@@ -15,10 +15,10 @@
 
                 <div class="alert alert-success">
                     <p>ID транзакции: <strong>{{ transaction.transaction_id }}</strong></p>
-                    <p>Сумма: <strong>{{ transaction.total_price }} Мемкоин</strong></p>
+                    <p>Сумма: <strong>{{ transaction.total_price }} STARCOIN</strong></p>
                     <p>Дата: <strong>{{ transaction.transaction_date.strftime('%Y-%m-%d %H:%M') }}</strong></p>
                     {% if transaction.payment_method == 'card' %}
-                    <p>Номер карты: <strong>{{ transaction.card_number }}</strong></p>
+                    <p>ID карты: <strong>{{ transaction.card_number }}</strong></p>
                     {% endif %}
                 </div>
 
@@ -27,7 +27,7 @@
                     <p>Товар: <strong>{{ product.name }}</strong></p>
                     <p>Количество: <strong>{{ transaction.quantity }}</strong></p>
                     <p>Способ оплаты: <strong>
-                        {% if transaction.payment_method == 'card' %}Банковская карта
+                        {% if transaction.payment_method == 'card' %}cosmo карта
                         {% elif transaction.payment_method == 'qr' %}QR-код
                         {% else %}Не указан{% endif %}
                     </strong></p>
