@@ -5,16 +5,14 @@ import os
 import uuid
 from datetime import datetime
 from config import Config
+from dotenv import load_dotenv
+load_dotenv()
 
 app = Flask(__name__)
 app.config.from_object(Config)  # Загружаем конфигурацию
 db = SQLAlchemy(app)
 
-app = Flask(__name__)
-app.config['SECRET_KEY'] = 'marslifehub-secret-key'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///marslifecopy.db'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-db = SQLAlchemy(app)
+
 
 with app.app_context():
     db.create_all()
